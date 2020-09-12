@@ -12,11 +12,14 @@
                 $scope.SayMessage = "Please enter data first";
                 return;
             }
-            itemList = itemList.split(",");
+            itemList = itemList.replace(/ /g, "").split(",");
+            itemList = itemList.filter(function(el) {
+                return el!="";
+            });
             console.log(itemList);
             if (itemList.length < 4) {
                 $scope.SayMessage = "Enjoy!";
-            } else if (itemList.length >= 4) {
+            } else {
                 $scope.SayMessage = "Too much!";
             }
 
