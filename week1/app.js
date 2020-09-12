@@ -10,20 +10,24 @@
             var itemList = $scope.items;
             if (itemList == undefined || itemList === "") {
                 $scope.SayMessage = "Please enter data first";
-                return;
-            }
-            itemList = itemList.replace(/ /g, "").split(",");
-            itemList = itemList.filter(function(el) {
-                return el!="";
-            });
-            console.log(itemList);
-            if (itemList.length < 4) {
-                $scope.SayMessage = "Enjoy!";
             } else {
-                $scope.SayMessage = "Too much!";
+                itemList = itemList.replace(/ /g, "").split(",");
+                itemList = itemList.filter(function(el) {
+                    return el!="";
+                });
+                if (itemList.length < 4 && itemList.length > 0) {
+                    $scope.SayMessage = "Enjoy!";
+                } else if (itemList.length >= 4) {
+                    $scope.SayMessage = "Too much!";
+                } else if (itemList.length == 0) {
+                    $scope.SayMessage = "Please enter data first";
+                }
             }
-
+            if ($scope.SayMessage == "Please enter data first") {
+                $scope.value = "!ok";
+            } else {
+                $scope.value = "ok";
+            }
         }
-
     }
 })();
