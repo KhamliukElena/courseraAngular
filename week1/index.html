@@ -17,14 +17,14 @@
          <div class="form-group">
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control" ng-model="items" ng-style="{'border-color': (value == 'ok') ? 'green' : 'red'}">
+             class="form-control" ng-model="items" ng-style="{'border-color': getColor()}">
          </div>
          <div class="form-group">
              <button class="btn btn-default" ng-click="ifTooMuch()">Check If Too Much</button>
              Empty elements (i.e. ", ,") are not considered as elements!
          </div>
          <div class="form-group message">
-           <div ng-style="{'color': (value == 'ok') ? 'green' : 'red'}">{{SayMessage}}</div>
+           <div ng-style="{'color': getColor()}">{{SayMessage}}</div>
          </div>
         </div>
    </div>

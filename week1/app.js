@@ -23,10 +23,12 @@
                     $scope.SayMessage = "Please enter data first";
                 }
             }
-            if ($scope.SayMessage == "Please enter data first") {
-                $scope.value = "!ok";
-            } else {
-                $scope.value = "ok";
+            $scope.getColor = function () {
+                if ($scope.SayMessage == "Please enter data first") {
+                    return "red";
+                } else {
+                    return "green";
+                }
             }
         }
     }
