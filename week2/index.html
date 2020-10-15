@@ -31,12 +31,12 @@
   <div class="row">
 
     <!-- To Buy List -->
-    <div class="col-md-6" ng-controller="ToBuyController as non-bought">
+    <div class="col-md-6" ng-controller="ToBuyController as non_bought">
      <h2>To Buy:</h2>
      <ul>
        <li ng-repeat="item in non_bought.toBuy">
         {{ item.quantity }} of {{ item.name }} 
-        <button class="btn btn-default" ng-click="non_bought.remove();"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+        <button class="btn btn-default" ng-click="non_bought.remove($index);"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
      </ul>
      <div class="emptyMessage">Everything is bought!</div>
     </div>
