@@ -22,7 +22,7 @@
 
     function ShoppingListCheckOffService () {
         var service = this;
-        var toBuy = [ {quantity: 10, name: "cookies"}, {quantity: 5, name: "crisps"} ];
+        var toBuy = [ {quantity: 10, name: "cookies"}, {quantity: 5, name: "crisps"}, {quantity: 3, name: "apples"}, {quantity: 8, name: "eggs"}, {quantity: 3, name: "peaches"} ];
         var alreadyBought = [];
         service.remove = function(itemIndex) {
             alreadyBought.push(toBuy[itemIndex]);
