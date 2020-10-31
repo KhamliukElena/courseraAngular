@@ -11,7 +11,7 @@
         .state('categories', {
             url: '/categories',
             templateUrl: 'src/menuApp/templates/categories.component.html',
-            controller: 'MenuAppController as categoriesCtrl',
+            controller: 'categoriesController as categoriesCtrl',
             resolve: {
                 categories: ['MenuDataService', function(MenuDataService) {
                     return MenuDataService.getAllCategories();

@@ -3,7 +3,7 @@
     angular.module('data').service('MenuDataService', MenuDataService);
 
     MenuDataService.$inject = ['$http'];
-    function MenuDataService() {
+    function MenuDataService($http) {
         var service = this;
 
         service.getAllCategories = function() {
@@ -11,7 +11,6 @@
                 method: "GET",
                 url: "https://davids-restaurant.herokuapp.com/categories.json"
             }).then(function(response) {
-                console.log("inside http");
                 return response.data;
             });
         };
