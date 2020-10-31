@@ -10,7 +10,13 @@
         })
         .state('categories', {
             url: '/categories',
-            templateUrl: 'src/menuApp/templates/categories.component.html'
+            templateUrl: 'src/menuApp/templates/categories.component.html',
+            controller: 'MenuAppController as categoriesCtrl',
+            resolve: {
+                categories: ['MenuDataService', function(MenuDataService) {
+                    return MenuDataService.getAllCategories();
+                }]
+            }
         })
         .state('items', {
             url: '/items',
