@@ -2,15 +2,26 @@
     'use strict';
     angular.module('data').service('MenuDataService', MenuDataService);
 
+    MenuDataService.$inject = ['$http']
     function MenuDataService() {
         var service = this;
 
         service.getAllCategories = function() {
-            //return a promise which is a result of $http, all cat
+            return $http({
+                method: "GET",
+                url: "https://davids-restaurant.herokuapp.com/categories.json"
+            }).then(function(response) {
+                return response.data;
+            });
         };
 
-        service.getItemsForCategory = function() {
-            //same. but for one cat. name of the cat is passed as a part of url
+        service.getItemsForCategory = function(categoryShortName) {
+            return $http({
+                method: "GET",
+                url: ("https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName)
+            }).then(function(response) {
+                return response.data.menu_items;
+            })
         };
     }
 })();
