@@ -1,3 +1,7 @@
-<div ng-repeat="catItem in $ctrl.items">
-    {{catItem.name}}, {{catItem.short_name}}, {{catItem.description}}, {{catItem.price_large | currency}}
-</div>
+<ol>
+    <li ng-repeat="catItem in $ctrl.items">
+        {{catItem.name}}, {{catItem.short_name}}.<br>
+        {{catItem.description}}
+        <div class="price">{{catItem.price_large | currency}}</div>
+    </li>
+</ol>
