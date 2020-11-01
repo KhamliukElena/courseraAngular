@@ -19,8 +19,18 @@
             }
         })
         .state('items', {
-            url: '/items',
-            templateUrl: 'src/menuApp/templates/items.component.html'
+            url: '/categories/{categoryShortName}',
+            templateUrl: 'src/menuApp/templates/items.component.html',
+            controller: 'itemsController as itemsCtrl',
+            params: {
+                categoryShortName: null,
+                categoryName: null
+            },
+            resolve: {
+                items: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService) {
+                    return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
+                }]
+            }
         });
     }
 })();
