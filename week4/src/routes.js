@@ -10,7 +10,7 @@
         })
         .state('categories', {
             url: '/categories',
-            templateUrl: 'src/menuApp/templates/categories.component.html',
+            templateUrl: 'src/menuApp/templates/categories.template.html',
             controller: 'categoriesController as categoriesCtrl',
             resolve: {
                 categories: ['MenuDataService', function(MenuDataService) {
@@ -20,7 +20,7 @@
         })
         .state('items', {
             url: '/categories/{categoryShortName}',
-            templateUrl: 'src/menuApp/templates/items.component.html',
+            templateUrl: 'src/menuApp/templates/items.template.html',
             controller: 'itemsController as itemsCtrl',
             params: {
                 categoryShortName: null,
