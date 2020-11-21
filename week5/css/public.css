@@ -113,6 +113,13 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+/*sign up*/
+input {
+  margin-bottom: 5px;
+}
+
+/*end sign up*/
+
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
