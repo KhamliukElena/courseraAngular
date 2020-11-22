@@ -16,11 +16,13 @@
         placeholder="Phone Number">
         <input type=text class="col-sm-12 text-center" required
         ng-model="sign.user.shortName"
+        required
         placeholder="Short name of your favourite dish">
         <span ng-if="signUpForm.name.$error.required && signUpForm.name.$touched">Name is required!</span>
         <span ng-if="signUpForm.surname.$error.required && signUpForm.surname.$touched">Last name is required!</span>
         <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">Must be a valid e-mail@domain!</span>
         <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">Phone format is ###-###-####!</span>
+        <span ng-if="signUpForm.shortName.$invalid && signUpForm.shortName.$touched">Favourite Dish is required!</span>
         <div class="col-sm-12 text-center">
             <button class="btn btn-primary"
             ng-disabled="signUpForm.$invalid"
