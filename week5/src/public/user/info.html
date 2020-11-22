@@ -1,6 +1,6 @@
 <div ng-controller="InfoController as info">
     <h3>Registered information</h3>
-    <div name="UserInfo" ng-if="info.signed">
+    <div name="UserInfo" ng-if="info.signed === true">
         First Name: {{info.user.name}} <br>
         Last Name: {{info.user.surname}} <br>
         E-mail: {{info.user.email}} <br>
@@ -9,5 +9,5 @@
         {{info.user.details.description}} <br>
         <img class="img-responsive" ng-src="{{info.apiPath}}images/{{info.user.shortName}}.jpg" alt="Unable to display: {{info.user.details.name}}" />
     </div>
-    <span ng-if="!info.signed">Not Signed Up Yet. <a ui-sref="public.sign">Sign up Now!</span>
+    <div name="errorSpan" ng-if="info.signed == false">Not Signed Up Yet. <a ui-sref="public.sign">Sign up Now!</div>
 </div>

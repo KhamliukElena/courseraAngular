@@ -10,10 +10,11 @@
         var info = this;
         info.apiPath = ApiPath;
         info.user = MenuService.getUser();
-        if (angular.equals(info.user, {})) {
-            info.signed = false;
-        } else {
+        info.signed = false;
+        if (info.user !== undefined) {
             info.signed = true;
+        } else {
+            info.signed = false;
         }
     };
 

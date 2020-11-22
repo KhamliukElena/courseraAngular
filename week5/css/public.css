@@ -139,7 +139,7 @@ form button {
 div h3 {
   text-align: center;
 }
-div div[name="UserInfo"] {
+div div[name="UserInfo"], div div[name="errorSpan"] {
   margin-left: 40px;
 }
 

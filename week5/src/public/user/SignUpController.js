@@ -7,8 +7,7 @@
     SignUpController.$inject = ['MenuService'];
         
     function SignUpController(MenuService) {
-        var sign = this;
-        
+        var sign = this;        
         sign.submit = function () {
             MenuService.getFavDish(sign.user.shortName).then(function(response) {
                 sign.user.details = response.data;
