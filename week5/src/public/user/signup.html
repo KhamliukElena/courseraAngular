@@ -17,10 +17,10 @@
         <input type=text class="col-sm-12 text-center" required
         ng-model="sign.user.shortName"
         placeholder="Short name of your favourite dish">
-        <span ng-if="signUpForm.name.$error.required && signUpForm.name.$touched">Name is required! <br> </span>
-        <span ng-if="signUpForm.surname.$error.required && signUpForm.surname.$touched">Last name is required! <br></span>
-        <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">Must be a valid e-mail@domain! <br></span>
-        <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">Phone format is ###-###-####! <br></span>
+        <span ng-if="signUpForm.name.$error.required && signUpForm.name.$touched">Name is required!</span>
+        <span ng-if="signUpForm.surname.$error.required && signUpForm.surname.$touched">Last name is required!</span>
+        <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">Must be a valid e-mail@domain!</span>
+        <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">Phone format is ###-###-####!</span>
         <div class="col-sm-12 text-center">
             <button class="btn btn-primary"
             ng-disabled="signUpForm.$invalid"
