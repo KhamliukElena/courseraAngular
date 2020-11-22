@@ -1,1 +1,13 @@
-<p>Here will be shown info about user</p>
+<div ng-controller="InfoController as info">
+    <h3>Registered information</h3>
+    <div name="UserInfo" ng-if="info.signed">
+        First Name: {{info.user.name}} <br>
+        Last Name: {{info.user.surname}} <br>
+        E-mail: {{info.user.email}} <br>
+        Phone: {{info.user.phone}} <br>
+        Favourite Dish: {{info.user.details.short_name}} - 
+        {{info.user.details.description}} <br>
+        <img class="img-responsive" ng-src="{{info.apiPath}}images/{{info.user.shortName}}.jpg" alt="Unable to display: {{info.user.details.name}}" />
+    </div>
+    <span ng-if="!info.signed">Not Signed Up Yet. <a ui-sref="public.sign">Sign up Now!</span>
+</div>

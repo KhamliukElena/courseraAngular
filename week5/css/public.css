@@ -135,7 +135,15 @@ form button {
 }
 
 /*end sign up form*/
+/* info page*/
+div h3 {
+  text-align: center;
+}
+div div[name="UserInfo"] {
+  margin-left: 40px;
+}
 
+/*end info page*/
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
