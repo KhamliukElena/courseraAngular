@@ -1,9 +1,25 @@
-<div class="container">
-    <input type="text" class="col-sm-12 text-center" placeholder="First Name">
-    <input type="text" class="col-sm-12 text-center" placeholder="Last Name">
-    <input type="email" class="col-sm-12 text-center" placeholder="E-Mail">
-    <input type="text" class="col-sm-12 text-center" placeholder="Phone Number">
-    <div class="col-sm-12 text-center">
-        <input type="button" class="btn btn-primary" value="Submit">
-    </div>
-</div>
+<form ng-controller="SignUpController as sign" name="signUpForm" novalidate>
+    <div class="container">
+        <input type="text" class="col-sm-12 text-center" name="name"
+        ng-model="sign.user.name"
+        required placeholder="First Name">
+        <input type="text" class="col-sm-12 text-center"
+        ng-model="sign.user.surname" 
+        name="surname" required placeholder="Last Name">
+        <input type="email" class="col-sm-12 text-center"
+        ng-model="sign.user.email" 
+        name="email" required placeholder="E-Mail">
+        <input type="text" class="col-sm-12 text-center" 
+        ng-model="sign.user.phone"
+        name="phone" required placeholder="Phone Number">
+        <span ng-if="signUpForm.name.$error.required && signUpForm.name.$touched">Name is required!</span>
+        <span ng-if="signUpForm.surname.$error.required && signUpForm.surname.$touched">Last name is required!</span>
+        <span ng-if="signUpForm.email.$error.required && signUpForm.email.$touched">E-mail is required!</span>
+        <span ng-if="signUpForm.phone.$error.required && signUpForm.phone.$touched">Phone is required!</span>
+        <div class="col-sm-12 text-center">
+            <button class="btn btn-primary"
+            ng-disabled="signUpForm.$invalid"
+            >Submit </button>
+        </div>
+    </div> 
+</form>

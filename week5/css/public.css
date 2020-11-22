@@ -113,12 +113,18 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
-/*sign up*/
+/*sign up form*/
 input {
   margin-bottom: 5px;
 }
+.ng-touched.ng-valid {
+  border-color: green;
+}
+.ng-touched.ng-invalid {
+  border-color: red;
+}
 
-/*end sign up*/
+/*end sign up form*/
 
 
 /********** Large devices only **********/
