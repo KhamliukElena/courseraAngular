@@ -9,10 +9,11 @@
     .controller('SignUpController', SignUpController);
         
     function SignUpController() {
-        var reg = this;
+        var sign = this;
         
-        reg.submit = function () {
-            reg.completed = true;
+        sign.submit = function () {
+            sign.completed = true;
+
         };
     }
 })();

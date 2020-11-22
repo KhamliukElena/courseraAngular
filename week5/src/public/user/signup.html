@@ -1,4 +1,5 @@
 <form ng-controller="SignUpController as sign" name="signUpForm" novalidate>
+    <h3>Sign up for our newsletter!</h3>
     <div class="container">
         <input type="text" class="col-sm-12 text-center" name="name"
         ng-model="sign.user.name"
@@ -13,9 +14,11 @@
         ng-model="sign.user.phone"
         name="phone" required pattern="(\d{3})-(\d{3})-(\d{4})"
         placeholder="Phone Number">
+        <input type=text class="col-sm-12 text-center" required
+        placeholder="Short name of your favourite dish">
         <span ng-if="signUpForm.name.$error.required && signUpForm.name.$touched">Name is required!</span>
         <span ng-if="signUpForm.surname.$error.required && signUpForm.surname.$touched">Last name is required!</span>
-        <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">Must be a valid e-mail!</span>
+        <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">Must be a valid e-mail@domain!</span>
         <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">Phone format is ###-###-####!</span>
         <div class="col-sm-12 text-center">
             <button class="btn btn-primary"
@@ -23,5 +26,6 @@
             ng-click="sign.submit()"
             >Submit </button>
         </div>
+        <span ng-if="sign.completed">Your information has been saved.</span>
     </div> 
 </form>

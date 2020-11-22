@@ -114,8 +114,18 @@ h3.menu-item-title {
 /* END SINGLE CATEGORY PAGE */
 
 /*sign up form*/
-input {
+form {
+  text-align: center;
+}
+form input {
   margin-bottom: 5px;
+  color: #3F0C1F;
+}
+form span, h3 {
+  margin-bottom: 7px;
+}
+form button {
+  margin-bottom: 3px;
 }
 .ng-touched.ng-valid {
   border-color: #00FF00;
