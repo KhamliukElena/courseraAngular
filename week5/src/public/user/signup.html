@@ -11,14 +11,16 @@
         name="email" required placeholder="E-Mail">
         <input type="text" class="col-sm-12 text-center" 
         ng-model="sign.user.phone"
-        name="phone" required placeholder="Phone Number">
+        name="phone" required pattern="(\d{3})-(\d{3})-(\d{4})"
+        placeholder="Phone Number">
         <span ng-if="signUpForm.name.$error.required && signUpForm.name.$touched">Name is required!</span>
         <span ng-if="signUpForm.surname.$error.required && signUpForm.surname.$touched">Last name is required!</span>
-        <span ng-if="signUpForm.email.$error.required && signUpForm.email.$touched">E-mail is required!</span>
-        <span ng-if="signUpForm.phone.$error.required && signUpForm.phone.$touched">Phone is required!</span>
+        <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">Must be a valid e-mail!</span>
+        <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">Phone format is ###-###-####!</span>
         <div class="col-sm-12 text-center">
             <button class="btn btn-primary"
             ng-disabled="signUpForm.$invalid"
+            ng-click="sign.submit()"
             >Submit </button>
         </div>
     </div> 

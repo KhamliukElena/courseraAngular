@@ -12,7 +12,7 @@
         var reg = this;
         
         reg.submit = function () {
-        reg.completed = true;
+            reg.completed = true;
         };
     }
 })();
