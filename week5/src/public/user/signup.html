@@ -15,6 +15,7 @@
         name="phone" required pattern="(\d{3})-(\d{3})-(\d{4})"
         placeholder="Phone Number">
         <input type=text class="col-sm-12 text-center" required
+        ng-model="sign.user.shortName"
         placeholder="Short name of your favourite dish">
         <span ng-if="signUpForm.name.$error.required && signUpForm.name.$touched">Name is required!</span>
         <span ng-if="signUpForm.surname.$error.required && signUpForm.surname.$touched">Last name is required!</span>
@@ -27,5 +28,6 @@
             >Submit </button>
         </div>
         <span ng-if="sign.completed">Your information has been saved.</span>
+        <span ng-if="sign.error">No such menu number exists.</span>
     </div> 
 </form>

@@ -27,6 +27,18 @@ function MenuService($http, ApiPath) {
     });
   };
 
+  service.getFavDish = function(short_name) {
+    return $http.get(ApiPath + '/menu_items/' + short_name + '.json');
+  }
+
+  service.save = function(user) {
+    service.user = angular.copy(user);
+  }
+
+  service.getUser = function() {
+    return service.user;
+  }
+
 }
 
 
